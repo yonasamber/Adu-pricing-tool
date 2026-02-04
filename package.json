@@ -2,7 +2,7 @@
   "name": "adu-pricing-tool",
   "version": "1.0.0",
   "description": "",
-  "main": "validation-json.js",
+  "main": "validate-json.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
