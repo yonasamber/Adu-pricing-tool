@@ -23,5 +23,10 @@
     "item": "Roofing",
     "unit": "per sq ft",
     "price": 8
+  },
+  {
+    "item": "Ceramics",
+    "unit": "per piece",
+    "price": 10
   }
 ]
