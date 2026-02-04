@@ -2,6 +2,8 @@ name: ADU QUOTE CI/CD
 on:
   push:
     branches: [master]
+permissions:
+  contents: write
 #workflow on push
 jobs:
   build-and-deploy:
@@ -30,5 +32,6 @@ jobs:
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{secrets.GITHUB_TOKEN}}
+          github_token: ${{secrets.NEW_PAT_TOKEN}}
           publish_dir: ./
+          force_orphan: true
