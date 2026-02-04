@@ -28,5 +28,10 @@
     "item": "Ceramics",
     "unit": "per piece",
     "price": 10
+  },
+  {
+    "item": "Cement",
+    "unit": "per sack",
+    "price": 15
   }
 ]
