@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ADU Calculator</title>
+
+    <style>
+      body {
+        max-width: 600px;
+        background: slategray;
+        margin: 2rem;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .item {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: inline-block;
+        width: 150px;
+      }
+      input {
+        width: 60px;
+        padding: 5px;
+        margin-left: 10px;
+      }
+      .total {
+        font-weight: bold;
+        font-size: 1.2rem;
+        margin-top: 20px;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>ADU Quote Calculator</h1>
+    <div id="calculator"></div>
+    <div class="total" id="total">Total: $0</div>
+
+    <script>
+      async function loadPricing() {
+        try {
+          const response = await fetch("pricing.json");
+          const data = await response.json();
+          return data;
+        } catch (error) {
+          console.error("failed to load pricing.json", error);
+          return [];
+        }
+      }
+
+      // calculate total
+      function calculateTotal(items, quantities) {
+        return items.reduce((sum, item, index) => {
+          return sum + item.price * (quantities[index] || 0);
+        }, 0);
+      }
+
+      //initiate calculator
+      async function initCalculator() {
+        const items = await loadPricing();
+        const calculator = document.getElementById("calculator");
+        const quantities = Array(items.length).fill(0);
+
+        items.forEach((item, index) => {
+          const div = document.createElement("div");
+          div.className = "item";
+          div.innerHTML = `<label>${item.item} (${item.unit}): $${item.price}</label>
+            <input type="number" min="0" value="0" id="qty-${index}"/>
+            `;
+          calculator.appendChild(div);
+
+          const input = div.querySelector("input");
+          input.addEventListener("input", (e) => {
+            quantities[index] = parseFloat(e.target.value) || 0;
+            document.getElementById("total").innerText =
+              "Total: $" + calculateTotal(items, quantities);
+          });
+        });
+      }
+      initCalculator();
+    </script>
+  </body>
+</html>
