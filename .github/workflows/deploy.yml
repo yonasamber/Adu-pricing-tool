@@ -1,5 +1,4 @@
 name: ADU QUOTE CI/CD
-
 on:
   push:
     branches: [main]
