@@ -27,11 +27,11 @@ jobs:
       #define user
       - name: Setup Git user
         run: |
-          git config --global user.yonasamber "github-actions[bot]"
-          git config --global user.yonasamber@gmail.com "github-actions[bot]@user.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@user.noreply.github.com"
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{secrets.NEW_PAT_TOKEN}}
+          personal_token: ${{secrets.NEW_PAT_TOKEN}}
           publish_dir: ./
           force_orphan: true
