@@ -33,5 +33,10 @@
     "item": "Cement",
     "unit": "per sack",
     "price": 15
+  },
+  {
+    "item": "Nail",
+    "unit": "per kg",
+    "price": 25
   }
 ]
