@@ -1,7 +1,7 @@
 name: ADU QUOTE CI/CD
 on:
   push:
-    branches: [main]
+    branches: [master]
 #workflow on push
 jobs:
   build-and-deploy:
