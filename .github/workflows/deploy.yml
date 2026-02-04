@@ -3,7 +3,7 @@ name: ADU QUOTE CI/CD
 on:
   push:
     branches: [main]
-
+#workflow on push
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
