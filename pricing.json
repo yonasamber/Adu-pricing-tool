@@ -38,5 +38,10 @@
     "item": "Nail",
     "unit": "per kg",
     "price": 25
+  },
+  {
+    "item": "plaster",
+    "unit": "per kg",
+    "price": 5
   }
 ]
