@@ -1,0 +1,47 @@
+[
+  {
+    "item": "Timber",
+    "unit": "per ft",
+    "price": 5
+  },
+  {
+    "item": "Joist",
+    "unit": "per ft",
+    "price": 3
+  },
+  {
+    "item": "Labour",
+    "unit": "per hour",
+    "price": 50
+  },
+  {
+    "item": "Concrete",
+    "unit": "per cubic ft",
+    "price": 10
+  },
+  {
+    "item": "Roofing",
+    "unit": "per sq ft",
+    "price": 8
+  },
+  {
+    "item": "Ceramics",
+    "unit": "per piece",
+    "price": 10
+  },
+  {
+    "item": "Cement",
+    "unit": "per sack",
+    "price": 15
+  },
+  {
+    "item": "Nail",
+    "unit": "per kg",
+    "price": 25
+  },
+  {
+    "item": "plaster",
+    "unit": "per kg",
+    "price": 5
+  }
+]
