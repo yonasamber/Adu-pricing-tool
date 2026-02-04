@@ -19,7 +19,7 @@ jobs:
         run: npm install || echo "No dependencies to install"
 
       - name: Validate pricing.json
-        run: node validate-json.
+        run: node validate-json.js
 
       - name: Deploy to Github pages
         uses: peaceiris/actions-gh-pages@v3
